@@ -1,0 +1,142 @@
+body {
+            display: grid;
+            place-content: center;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        h1 {
+			top: calc(15% + 0.18em);
+            display: flex;
+            position: absolute;
+            padding: 0 0.0625em;
+            transform-style: preserve-3d;
+            font: 900 10vw Chilanka, Segoe Script, Purisa, Comic Sans MS, cursive;
+            color: black;
+			animation: textAppear 2s ease-out forwards;
+        }
+
+        h1::after {
+            position: absolute;
+            top: calc(50% + 0.18em);
+            right: 0;
+            width: calc(50% + 50vw);
+            height: 0.125em;
+            border-radius: 0 0.125em 0.125em 0;
+            content: "";
+			background:red;
+			transform-style:preserve-background;
+			box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+        }
+		h1::before {
+            position: absolute;
+            top: calc(50% + 0.29em);
+            right: 0;
+            width: calc(50% + 50vw);
+            height: 0.125em;
+            border-radius: 0 0.125em 0.125em 0;
+            content: "";
+			background:white;
+			transform-style:preserve-background;
+			box-shadow: 3px 3px 10px rgba(255, 0, 0, 0.7);
+        }
+
+        h1::after {
+            animation: slide 2s ease-out;
+        }
+
+        h1::before {
+            animation: slide2 2s ease-out;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(-100%);
+           }
+            100% {
+                transform: translateX(0);
+           }
+
+        }
+
+        @keyframes slide2 {
+            0% {
+                transform: translateX(100%);
+				            background: white;
+
+            }
+            100% {
+                transform: translateX(0);
+				            background: white;
+
+            }
+        }
+		@keyframes textAppear {
+            0% {
+                text-shadow: none;
+            }
+            100% {
+                text-shadow: 3px 3px 15px red;
+            }
+        }
+		 @keyframes tornado {
+            0% {
+                transform: translateY(-100vh)translateX(-100vh) scale(0.2) rotateY(0deg);
+                opacity: 0.5;
+            }
+            25% {
+                transform: translateY(-50vh)translateX(-50vw) scale(0.5) rotateY(180deg);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateY(0vh)translateX(-20vw) scale(0.9) rotateY(0deg);
+                opacity: 0.8;
+            }
+            75% {
+                transform: translateY(10vh)translateX(-10vw) scale(1) rotateY(180deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(45vh) scale(1.2) rotateY(360deg);
+                opacity: 1;
+            }
+        }
+
+        .tornado-image {
+			display:fixed;
+            position:relative;
+            left: 0;
+            height: auto;
+            transform: translateX(-50%);
+            animation: tornado 2s ease-out forwards;
+        }
+        .letter {
+            overflow: visible;
+            white-space: pre;
+            transform: rotateY(2deg) scaleX(1.00061);
+        }
+
+        .rev {
+            transform: rotateY(-2deg) scaleX(1.00061);
+        }
+		body img{
+			width:30vw;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/* end

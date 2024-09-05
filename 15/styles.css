@@ -1,0 +1,68 @@
+body {
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+
+.text-center {
+    text-align: center;
+}
+
+.wave-container {
+	text-align: center;
+    position: relative;
+    overflow: hidden;
+    width: 400px;
+	max-width: 650px;
+	max-height: 65vh;
+    background-image: linear-gradient(to bottom, #6a0ddc, #5f0ddd, #530edd, #450fde, #3210de);
+}
+
+.heading-style {
+    font-family: 'Righteous', cursive;
+    font-size: 10vw;
+    font-weight: bolder;
+    color: #fff;
+    margin: 10px;
+    z-index: 10;
+    animation: waveAnimation 3s ease-in-out infinite;
+}
+
+.wave::before, .wave::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    z-index: 5;
+}
+
+.wave::before {
+    left: 25%;
+    top: 0;
+    animation: moveWave 6s linear infinite;
+}
+
+.wave::after {
+    left: 75%;
+    top: 0;
+    animation: moveWave 6s linear infinite reverse;
+}
+
+@keyframes waveAnimation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes moveWave {
+    0% { transform: translate(-50%, -50%) scale(0.5); }
+    50% { transform: translate(-50%, -50%) scale(1); }
+    100% { transform: translate(-50%, -50%) scale(0.5); }
+}
